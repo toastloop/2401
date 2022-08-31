@@ -18,16 +18,16 @@ Sample Input: (Lab1_Inputfile1_Knowlton.txt)
 
 Expected Output:
 
-Student 0 highest score: 98
-Student 1 highest score: 93
-Student 2 highest score: 84
-Student 3 highest score: 100
-Student 4 highest score: 64
-Student 5 highest score: 91
-Student 6 highest score: 100
+Student 1 highest score: 98
+Student 2 highest score: 93
+Student 3 highest score: 84
+Student 4 highest score: 100
+Student 5 highest score: 64
+Student 6 highest score: 91
 Student 7 highest score: 100
-Student 8 highest score: 90
-Student 9 highest score: 91
+Student 8 highest score: 100
+Student 9 highest score: 90
+Student 10 highest score: 91
 Average of the first midterm: 78
 Average of the second midterm: 80
 Average of the third midterm: 78
@@ -40,7 +40,7 @@ Sample Input: Lab1_Inputfile2_Knowlton.txt
 
 75 94 98
 93 56 67
-65 84 53
+65 -84 53
 100 89 95
 43 64 52
 84 76 -91
@@ -51,19 +51,19 @@ Sample Input: Lab1_Inputfile2_Knowlton.txt
 
 Expected Output: 
 
-Student 0 highest score: 98
-Student 1 highest score: 93
-Student 2 highest score: 84
-Student 3 highest score: 100
-Student 4 highest score: 64
-Student 5 highest score: 84
-Student 6 highest score: 100
+Student 1 highest score: 98
+Student 2 highest score: 93
+Student 3 has a negative grade.
+Student 4 highest score: 100
+Student 5 highest score: 64
+Student 6 has a negative grade.
 Student 7 highest score: 100
-Student 8 highest score: 90
-Student 9 highest score: 91
+Student 8 highest score: 100
+Student 9 highest score: 90
+Student 10 highest score: 91
 Average of the first midterm: 78
-Average of the second midterm: 80
-Average of the third midterm: 60
+Average of the second midterm: 79
+Average of the third midterm: 80
 -------------------------------------------------------------------------------
 Case Num: 3
 
@@ -84,16 +84,16 @@ Sample Input: Lab1_Inputfile3_Knowlton.txt
 
 Expected Output: 
 
-Student 0 highest score: 98
-Student 1 highest score: 93
-Student 2 highest score: 84
-Student 3 highest score: 100
-Student 4 highest score: 64
-Student 5 highest score: 84
-Student 6 highest score: 100
+Student 1 highest score: 98
+Student 2 has missing grades.
+Student 3 highest score: 84
+Student 4 highest score: 100
+Student 5 highest score: 64
+Student 6 has missing grades.
 Student 7 highest score: 100
-Student 8 highest score: 89
-Student 9 highest score: 91
+Student 8 highest score: 100
+Student 9 has missing grades.
+Student 10 highest score: 91
 Average of the first midterm: 78
 Average of the second midterm: 80
 Average of the third midterm: 76
@@ -117,27 +117,60 @@ Sample Input: Lab1_Inputfile4_Knowlton.txt
 
 Expected Output: 
 
-Student 0 highest score: 98
-Student 1 highest score: 93
-Student 2 highest score: 84
-Student 3 highest score: 0
-Student 4 highest score: 64
-Student 5 highest score: 91
-Student 6 highest score: 100
+Student 1 highest score: 98
+Student 2 highest score: 93
+Student 3 highest score: 84
+Student 4 has missing grades.
+Student 5 highest score: 64
+Student 6 highest score: 91
 Student 7 highest score: 100
-Student 8 highest score: 90
-Student 9 highest score: 91
+Student 8 highest score: 100
+Student 9 highest score: 90
+Student 10 highest score: 91
 Average of the first midterm: 75
 Average of the second midterm: 79
 Average of the third midterm: 76
 -------------------------------------------------------------------------------
 Case Num: 5
 
-Description: Filename is not correct
+Description: Student 2 has a string instead of 
 
-Sample Input: Lab1_Inputfile5_Knowlton.txt
+Sample Input: Lab1_Inputfile4_Knowlton.txt
+
+75 94 98
+ssd 56 67
+65 84 53
+100 89 95
+43 64 52
+84 76 91
+73 92 100
+67 100 75
+89 75 90
+91 73 64
 
 Expected Output: 
 
-Lab1_Inputfile5_Knowlton.txt (No such file or directory)
+Student 1 highest score: 98
+Student 2 has missing grades.
+Student 3 highest score: 84
+Student 4 highest score: 100
+Student 5 highest score: 64
+Student 6 highest score: 91
+Student 7 highest score: 100
+Student 8 highest score: 100
+Student 9 highest score: 90
+Student 10 highest score: 91
+Average of the first midterm: 76
+Average of the second midterm: 83
+Average of the third midterm: 79
+-------------------------------------------------------------------------------
+Case Num: 6
+
+Description: Filename is not correct
+
+Sample Input: Lab1_Inputfile6_Knowlton.txt
+
+Expected Output: 
+
+Lab1_Inputfile6_Knowlton.txt (No such file or directory)
 -------------------------------------------------------------------------------
