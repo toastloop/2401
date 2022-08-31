@@ -63,8 +63,14 @@ public class Lab1_Knowlton{
 
                 try{
 
-                    // Loop while the line scanner has the next integer in the line.
-                    while(lineScanner.hasNextInt()){
+                    // Loop while the line scanner has the next value in the line.
+                    while(lineScanner.hasNext()){
+
+                        // If the next value is not an integer, skip this value and throw an exception.
+                        if(!lineScanner.hasNextInt()){
+                            lineScanner.next();
+                            throw new Exception("Student " + studentNum + " has a non-integer grade.");
+                        }
 
                         // Read the grade into an integer variable
                         int grade = lineScanner.nextInt();
@@ -97,10 +103,6 @@ public class Lab1_Knowlton{
                                     thirdMidtermNum++;
                                 break;
 
-                                // Default value
-                                default:
-                                    throw new Exception("Number of grades exceeds number of midterms");
-
                             }
 
                             // Check if the grade is greater than  the maximum grade so far.
@@ -119,16 +121,18 @@ public class Lab1_Knowlton{
                     // Close the scanner for the line
                     lineScanner.close();
 
-                    if(assignmentNum < 3){
-
-                        // Throw an exception stating that the student has missing grades.
-                        throw new Exception("Student " + studentNum + " has missing grades.");
-
-                    } else {
-
-                        //  Print the student number (row) and the highest grade in the row
-                        System.out.println("Student " + studentNum + " highest score: " + maxGrade);
-
+                    switch(assignmentNum){
+                        case 3:
+                            System.out.println("Student " + studentNum + " highest score: " + maxGrade);
+                        break;
+                        case 2:
+                            throw new Exception("Student " + studentNum + " has one missing grade.");
+                        case 1:
+                            throw new Exception("Student " + studentNum + " has two missing grade.");
+                        case 0:
+                            throw new Exception("Student " + studentNum + " is missing all three grades.");
+                        default:
+                            throw new Exception("Student " + studentNum + " exceeds the number of grades expected.");
                     }
 
                 }
