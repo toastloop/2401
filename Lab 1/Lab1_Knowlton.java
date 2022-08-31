@@ -121,6 +121,8 @@ public class Lab1_Knowlton{
                     // Close the scanner for the line
                     lineScanner.close();
 
+                    // Checks the number of assignments and throws an error if there are too few or too many.
+                    // Else it prints the highest score of the three grades.
                     switch(assignmentNum){
                         case 3:
                             System.out.println("Student " + studentNum + " highest score: " + maxGrade);
