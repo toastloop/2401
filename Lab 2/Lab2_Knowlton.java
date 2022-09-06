@@ -74,12 +74,38 @@ public class Lab2_Knowlton{
         // close the file scanner.
         fileScanner.close();
 
+        // Create a scanner for input from user.
+        Scanner inputScanner = new Scanner(System.in);
+
+        // a variable to hold user selected row
+        int rowNum = -1;
+        // check if user selected row is outside the number of rows.
+        while(rowNum > fileContents.length-1 || rowNum < 0){
+            // ask the user for the row number to check
+            System.out.println("Please input a row to check");
+            // store the number in the rowNum
+            rowNum = inputScanner.nextInt();
+        }
+
+        // a variable to hold user selected column
+        int colNum = -1;
+        // check if user selected column is outside the number of columns.
+        while(colNum > fileContents[0].length-1 || colNum < 0){
+            // ask the user for the column number to check
+            System.out.println("Please input a column to check");
+            // store the number in colNum
+            colNum = inputScanner.nextInt();
+        }
+
+        // Close the user input scanner.
+        inputScanner.close();
+
         // check the correctness of the array
         checkArray(fileContents);
         // check the correctness of the selected row
-        checkRow(fileContents, 3);
+        checkRow(fileContents, rowNum);
         // check the correctness of the selected column
-        checkColumn(fileContents, 2);
+        checkColumn(fileContents, colNum);
         // print the triangle form of the array.
         printTriangle(fileContents);
 
