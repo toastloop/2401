@@ -26,37 +26,15 @@ public class Lab2_Knowlton{
         // Create a scanner for input from user.
         Scanner inputScanner = new Scanner(System.in);
 
-        // loops until the user provides a file that exists
+        // try to read the file using the readFile method
         try{
-            fileContents = readFile("Lab2_Inputfile1_Knowlton.txt");
-        } catch(FileNotFoundException e) {
-            System.out.println();
+            fileContents = readFile("Lab2_Inputfile2_Knowlton.txt");
+        } 
+        // catch any file not found exceptions
+        catch(FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            System.exit(1);
         }
-
-        /*
-        // holds a boolean if the file exists
-        boolean fileExists = false;
-
-        do{
-            // ask for file name
-            System.out.println("\nPlease input a file name to check:");
-            System.out.print(">> ");
-            // store file name input
-            String fileName = inputScanner.next();
-            // try to open the given file name
-            try{
-                fileContents = readFile(fileName);
-                fileExists = true;
-            } 
-            // catch the file not found exception
-            catch(FileNotFoundException e){
-                // print out an error telling the user the file doesn't exist
-                System.out.println("\n Error: File '" + fileName + "' was not found");
-                // mark the file does not exist
-                fileExists = false;
-            }
-        } while(fileExists != true);
-        */
 
         // a variable to hold user selected row
         int rowNum = 0;
