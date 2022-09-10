@@ -1,0 +1,60 @@
+1. How to create an array of objects?
+Object[] objectArray = new Object[size];
+
+2. How to read a text file with every line as an object of the array?
+File file = new File("filename.txt");
+Scanner scanner = new Scanner(file);
+String[] fileContents = new String[size];
+int index = 0;
+do{
+    fileContents[index++] = scanner.nextLine();
+} while(scanner.hasNextLine());
+
+3. How to declare private variables in a class?
+public class Example{
+    private int size = 0;
+}
+
+4. How to access these private variables ?
+from a different class in another program (.java) file?
+public class Example{
+    private int size = 0;
+    public void setSize(int size){
+        this.size = size;
+    }
+    public int getSize(){
+        return this.size;
+    }
+}
+public class Runner{
+    public static void main(String[] args) {
+        Example myExample = new Example();
+        myExample.setSize(3);
+        System.out.println(myExaple.getSize());
+    }
+}
+
+5. How do you compare 2 objects of the above array 
+from the through a method?
+public class Example{
+    private int size = 0;
+    public void setSize(int size){
+        this.size = size;
+    }
+    public int getSize(){
+        return this.size;
+    }
+    public int compareTo(Object o){
+        Example givenExample = (Example) o;
+        return (this.getSize() > givenExample.getSize()) ? 1 : (this.getSize() < givenExample.getSize()) ? -1 : 0;
+    }
+}
+public class Runner{
+    public static void main(String[] args) {
+        Example myExample = new Example();
+        myExample.setSize(3);
+        Example myExample2 = new Example();
+        myExample2.setSize(2);
+        System.out.println(myExample.compareTo(myExample2));
+    }
+}
