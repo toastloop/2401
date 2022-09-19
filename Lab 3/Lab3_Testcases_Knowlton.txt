@@ -39,7 +39,7 @@ Sample Input:
 
 Expected Output:
 
-There is a negative number on Row 3
+There is a negative number on Row 4
 
 -------------------------------------------------------------------------------
 
