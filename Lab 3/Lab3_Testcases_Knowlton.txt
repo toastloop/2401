@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+
+Case Num: 1
+
+Description: Correct input
+
+Sample Input:
+
+8.2 17.1 2.9
+3.4 4.6 3.1 
+1.4 19.9 1.6 
+4.9 6.7 5.3 
+18.5 2 16.3
+4.0 7.2 10.8
+
+Expected Output:
+
+Average Surface Area: 310.4
+
+Box Indices larger than average surface area: 0,4
+The largest box has index: 4, surface area: 742.3, and dimensions: length is 18.5, width is 2.0, and height is 16.3.
+Number of boxes with larger than average surface area: 2
+Number of boxes with smaller than average surface area: 4
+
+-------------------------------------------------------------------------------
+
+Case Num: 2
+
+Description: Negative input on row 3
+
+Sample Input:
+
+8.2 17.1 2.9
+3.4 4.6 3.1 
+1.4 19.9 1.6 
+4.9 -6.7 5.3 
+18.5 2 16.3
+4.0 7.2 10.8
+
+Expected Output:
+
+There is a negative number on Row 3
+
+-------------------------------------------------------------------------------
+
+Case Num: 3
+
+Description: Non existent file
+
+Sample Input: (Incorrect filename)
+
+Expected Output:
+
+/Abolute/Path/To/NonExistentFile.txt (No such file or directory)
+
+-------------------------------------------------------------------------------
