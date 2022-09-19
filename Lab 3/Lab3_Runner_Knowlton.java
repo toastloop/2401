@@ -40,7 +40,7 @@ public class Lab3_Runner_Knowlton{
         // Try to catch any problems
         try{
             // Use readFile to populate the array of box objects
-            boxArray = readFile("input3.txt");
+            boxArray = readFile("input.txt");
         }
         // Catch if the file is not found
         catch(FileNotFoundException e){
