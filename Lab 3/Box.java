@@ -4,7 +4,7 @@
     Class: CS2401 Elementary Data Structures and Algorithms
     CRN: 18418
     Lab Number: 3
-    Date: 8 September 2022
+    Date: 19 September 2022
 */
 
 public class Box {
@@ -22,13 +22,14 @@ public class Box {
     }
     // Constructor with all of the parameters to make the box
     Box(int index, double length, double width, double height){
-        // Set all of the given values to their respetive parameters
+        // Set all of the given values to their respective parameters
         this.index = index;
         this.length = length;
         this.width = width;
         this.height = height;
     }
 
+    // Getters/Accessors return the value of the requested variable
     public int getIndex(){
         return this.index;
     }
@@ -41,10 +42,12 @@ public class Box {
     public double getLength(){
         return this.length;
     }
+    // Calculates the surface area of the box and returns the value
     public double getSurfaceArea(){
-        return 2 * ((this.length * this.width) + (this.length * this.height) + (this.width * this.height));
+        return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
     }
 
+    // Setters/Mutators change the value of the requested variable and do not return a value
     public void setIndex(int index){
         this.index = index;
     }
@@ -58,6 +61,11 @@ public class Box {
         this.length = length;
     }
 
+    /*  
+        Takes in a box object and compares it's surface area to the current box.
+        Returns 1 if the current box is larges, -1 if the given box is larger
+        and zero if the two boxes are equal.
+    */
     public int compareTo(Object o){
         Box givenBox = (Box) o;
         return (this.getSurfaceArea() > givenBox.getSurfaceArea()) ? 1 : (this.getSurfaceArea() < givenBox.getSurfaceArea()) ? -1 : 0;
