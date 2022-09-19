@@ -26,7 +26,7 @@ Number of boxes with smaller than average surface area: 4
 
 Case Num: 2
 
-Description: Negative input on row 3
+Description: Negative input on row 4 (row 3 of zero indexed)
 
 Sample Input:
 
