@@ -95,7 +95,7 @@ public class Lab3_Runner_Knowlton{
                     lineScanner.close();
 
                     // throw an exception about the negative value
-                    throw new Exception("There is a negative value on Row " + index);
+                    throw new Exception("There is a negative value on Row " + (index + 1));
                 }
 
                 // Create a box object at the index of the current line.
