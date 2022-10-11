@@ -1,0 +1,15 @@
+Mercury
+4879
+0
+Venus
+12104
+0
+Earth
+12756
+1
+Mars
+6805
+2
+Saturn
+120536
+62
