@@ -58,10 +58,17 @@ class Lab_6{
    */
   static int countDigits(String str){
     // Write your code here.
+
+    // count holds the number of digits in a string
     int count = 0;
+    // base case: if the string is empty, we don't have any more characters to check so return a 0
     if(str.isEmpty()) return 0;
+    // if the first character in the string is a digit, set count to 1 and call the method using the string without the character we checked.
     if(Character.isDigit(str.charAt(0))) count = 1 + countDigits(str.substring(1));
+    // if the first character isn't a digit, set count to call the method using the string without the character we checked.
     else count = countDigits(str.substring(1));
+
+    // return the count of digits
     return count;
   }
   
@@ -76,8 +83,13 @@ class Lab_6{
   
   static boolean hasCapital(String str){
       // Write your code here.
+
+      // if the character is an uppercase immediately return true
       if(!str.isEmpty() && Character.isUpperCase(str.charAt(0))) return true;
+      // if the character is not uppercase call the method using the string without the character we checked.
       else if(!str.isEmpty()) return hasCapital(str.substring(1));
+
+      // base case: if the string is empty, we don't have any more characters to check
       return false;
   }
   
@@ -89,8 +101,14 @@ class Lab_6{
    */
   static boolean checkPalindrome(String str){
      // Write your code here.
+
+      //base case: if there is less than 2 characters left than the string is a palindrome so return true
       if(str.length() < 2) return true;
+      //if the character at the beginning of the string matches the one at the end of the string
+      //continue looking by calling the method with a string excluding the characters we already checked.
       else if(str.charAt(0) == str.charAt(str.length() - 1)) return checkPalindrome(str.substring(1, str.length() - 1));
+
+      //if the character at the beginning of the string does not match the one at the end of the string return false
       return false;
   }
   
@@ -104,8 +122,13 @@ class Lab_6{
   
   static String reverseString(String str){
        // Write your code here.
+
+       // base case: if the given string is empty there's nothing left to check so return an empty string
       if(str.isEmpty()) return "";
+      // set the string to the last character and then call the method with the the string minus the last character
       str = str.charAt(str.length() - 1) + reverseString(str.substring(0, str.length() - 1));
+
+      // return the string
       return str;
   }
   
@@ -125,9 +148,17 @@ class Lab_6{
   static String updateString(String given,
           String unexpectedCh){
     // Write your code here.
+
+    // base case: if the given string is empty there's nothing left to check so return an empty string
     if(given.isEmpty()) return "";
+    // if the string of unexpected chars contains the first character from the given string
+    // set given string to call the method with the string minus the first character
     if(unexpectedCh.contains(given.subSequence(0, 1))) given = updateString(given.substring(1), unexpectedCh);
+    // if the string of unexpected chars doesn't contain the first character from the given string
+    // set given string to the first character and call the method with the string minus the first character
     else given = given.subSequence(0, 1) + updateString(given.substring(1), unexpectedCh);
+
+    // return the given string
     return given;
   }
 }
