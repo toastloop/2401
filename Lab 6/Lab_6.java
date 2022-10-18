@@ -58,9 +58,11 @@ class Lab_6{
    */
   static int countDigits(String str){
     // Write your code here.
-    if(str.length() == 0) return 0;
-    if(Character.isDigit(str.charAt(0))) return 1 + countDigits(str.substring(1));
-    else return countDigits(str.substring(1));
+    int count = 0;
+    if(str.isEmpty()) return 0;
+    if(Character.isDigit(str.charAt(0))) count = 1 + countDigits(str.substring(1));
+    else count = countDigits(str.substring(1));
+    return count;
   }
   
   
@@ -74,9 +76,9 @@ class Lab_6{
   
   static boolean hasCapital(String str){
       // Write your code here.
-      if(str.length() == 0) return false;
-      if(Character.isUpperCase(str.charAt(0))) return true;
-      else return hasCapital(str.substring(1));
+      if(!str.isEmpty() && Character.isUpperCase(str.charAt(0))) return true;
+      else if(!str.isEmpty()) return hasCapital(str.substring(1));
+      return false;
   }
   
   /** 
@@ -88,8 +90,8 @@ class Lab_6{
   static boolean checkPalindrome(String str){
      // Write your code here.
       if(str.length() < 2) return true;
-      if(str.charAt(0) == str.charAt(str.length() - 1)) return checkPalindrome(str.substring(1, str.length() - 1));
-      else return false;
+      else if(str.charAt(0) == str.charAt(str.length() - 1)) return checkPalindrome(str.substring(1, str.length() - 1));
+      return false;
   }
   
   
@@ -102,8 +104,9 @@ class Lab_6{
   
   static String reverseString(String str){
        // Write your code here.
-      if(str.length() == 0) return "";
-      return str.charAt(str.length() - 1) + reverseString(str.substring(0, str.length() - 1));
+      if(str.isEmpty()) return "";
+      str = str.charAt(str.length() - 1) + reverseString(str.substring(0, str.length() - 1));
+      return str;
   }
   
   /**
@@ -121,11 +124,11 @@ class Lab_6{
   
   static String updateString(String given,
           String unexpectedCh){
-    
     // Write your code here.
-    if(given.length() == 0) return "";
-    if(unexpectedCh.contains(given.charAt(0) + "")) return updateString(given.substring(1), unexpectedCh);
-    else return given.charAt(0) + updateString(given.substring(1), unexpectedCh);
+    if(given.isEmpty()) return "";
+    if(unexpectedCh.contains(given.subSequence(0, 1))) given = updateString(given.substring(1), unexpectedCh);
+    else given = given.subSequence(0, 1) + updateString(given.substring(1), unexpectedCh);
+    return given;
   }
 }
 
