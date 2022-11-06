@@ -162,4 +162,3 @@ class Lab_6{
     return given;
   }
 }
-
