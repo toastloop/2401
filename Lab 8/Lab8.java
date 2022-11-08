@@ -217,6 +217,7 @@ public class Lab8 {
    * @param theBoxes
    */
   static void displayAllBoxes(Box[] theBoxes){
+    // Going through the array of Box objects and printing out the values of the Box objects.
     for(Box box : theBoxes){
       System.out.println(box.toString());
     }
@@ -230,37 +231,64 @@ public class Lab8 {
    */
   static Box[] getBoxArrayFromDataFile (String fileName){
 
+    // Creating a new file object with the name of the file that is passed in.
     File file = new File(fileName);
+    // Create a Box array using the size of the number of lines in the file
     Box[] theBoxes = new Box[lines(file)];
 
+    // Creating a new scanner object that is reading the file.
     try (Scanner fileScanner = new Scanner(file)) {
       
-
+      // Loop through the file until you reach the end
       for (int i = 0; fileScanner.hasNextLine(); i++) {
+        // Store the line in a string variable to pass to the scanner
         String line = fileScanner.nextLine();
+        // Create a new scanner object that reads the line to parse
         Scanner scanner = new Scanner(line);
+        // Grab the width, heigh, and length from the line as doubles
         double width = scanner.nextDouble();
         double height = scanner.nextDouble();
         double length = scanner.nextDouble();
+        // Close the line scanner
         scanner.close();
+        // Create a new object in the box array with the width, height,
+        // and length from the current line in the file.
         theBoxes[i] = new Box(width, height, length);
       }
 
-    } catch (Exception e) {
+    } 
+    // Catch any exceptions that may be thrown by the scanner
+    catch (Exception e) {
+      // Print out the message of the exception
       e.getLocalizedMessage();
     }
 
+    // return the array of boxes
     return theBoxes;
   }
 
+  /**
+   * It returns the number of lines in a file
+   * 
+   * @param file The file to be read.
+   * @return The number of lines in the file.
+   */
   static int lines(File file){
+    int lines = 0;
+    // open a scanner for the given file
     try(Scanner scan=new Scanner(file)){
-      for(int lines = 1; scan.nextLine()!=null; lines++) {
-        if(!scan.hasNextLine()) return lines;
-      }
-    }catch(Exception e){ 
-      System.out.println(e.getLocalizedMessage()); 
+      // loop through all of the lines of the file increasing the
+      // line count for each iteration until the next line is null
+      while(scan.hasNextLine()) if(scan.nextLine() != null) lines++;
+      // return the number of lines in the file
+      return lines;
     }
-    return -1;
+    // Catch any exceptions that may be thrown by the scanner
+    catch(Exception e){
+      // Print out the message of the exception
+      System.out.println(e.getLocalizedMessage());
+      // if there was a file problem return -1
+      return -1;
+    }
   }
 }
